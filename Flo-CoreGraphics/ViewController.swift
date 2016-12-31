@@ -15,14 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var label: UILabel!
 
-    var isGraphShowing = false
+    var isGraphShowing = true
     
     @IBAction func counterTap(gesture: UITapGestureRecognizer?) {
         if (isGraphShowing) {
-            UIView.transition(from: counterView, to: graphView, duration: 0.3, options: UIViewAnimationOptions.transitionFlipFromLeft.union(UIViewAnimationOptions.showHideTransitionViews), completion: nil)
+            UIView.transition(from: graphView, to: counterView, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
+            print("if firing")
         } else {
-            UIView.transition(from: graphView, to: counterView, duration: 0.3, options: UIViewAnimationOptions.transitionFlipFromRight.union(UIViewAnimationOptions.showHideTransitionViews), completion: nil)
+            UIView.transition(from: counterView, to: graphView, duration: 0.3, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
+            print("else firing")
         }
+        print(isGraphShowing)
         isGraphShowing = !isGraphShowing
     }
     
