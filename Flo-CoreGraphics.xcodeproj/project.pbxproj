@@ -16,6 +16,7 @@
 		7975AF6B1E15B1E50054522B /* Push-ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7975AF6A1E15B1E50054522B /* Push-ButtonView.swift */; };
 		7975AF6D1E15B3AA0054522B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7975AF6C1E15B3AA0054522B /* ViewController.swift */; };
 		7975AF6F1E15BF970054522B /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7975AF6E1E15BF970054522B /* CounterView.swift */; };
+		7975AF741E1778350054522B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7975AF731E1778340054522B /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7975AF6A1E15B1E50054522B /* Push-ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Push-ButtonView.swift"; sourceTree = "<group>"; };
 		7975AF6C1E15B3AA0054522B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7975AF6E1E15BF970054522B /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		7975AF731E1778340054522B /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				7975AF6A1E15B1E50054522B /* Push-ButtonView.swift */,
 				7975AF6C1E15B3AA0054522B /* ViewController.swift */,
 				7975AF6E1E15BF970054522B /* CounterView.swift */,
+				7975AF731E1778340054522B /* GraphView.swift */,
 			);
 			path = "Flo-CoreGraphics";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7975AF741E1778350054522B /* GraphView.swift in Sources */,
 				7975AF6D1E15B3AA0054522B /* ViewController.swift in Sources */,
 				7975AF6B1E15B1E50054522B /* Push-ButtonView.swift in Sources */,
 				7975AF3D1E15B0F40054522B /* AppDelegate.swift in Sources */,

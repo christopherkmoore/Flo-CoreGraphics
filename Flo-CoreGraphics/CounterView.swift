@@ -9,12 +9,23 @@
 import UIKit
 
 
-@IBDesignable class CounterView: UIView {
+class CounterView: UIView {
 
-    let NoOfGlasses = 100
+    let NoOfGlasses = 8
     let π: CGFloat = CGFloat(M_PI)
     
-    @IBInspectable var counter: Int = 100
+    @IBInspectable var counter: Int = 5 {
+        didSet {
+            if counter <= NoOfGlasses {
+                setNeedsDisplay()
+            }
+            if counter == 0  {
+                outlineColor = counterColor
+            } else {
+                outlineColor = UIColor.blue
+            }
+        }
+    }
     @IBInspectable var outlineColor: UIColor = UIColor.blue
     @IBInspectable var counterColor: UIColor = UIColor.orange
     
