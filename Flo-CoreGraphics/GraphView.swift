@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class GraphView: UIView {
+class GraphView: UIView {
 
     @IBInspectable var startColor: UIColor = UIColor.red
     @IBInspectable var endColor: UIColor = UIColor.orange
@@ -70,6 +70,8 @@ import UIKit
         
         // set underside gradient from line topBorder
         
+        context?.saveGState()
+        
         var clippingPath = graphPath.copy() as! UIBezierPath
         
         clippingPath.addLine(to: CGPoint(x: columnXPoint(graphPoints.count - 1), y: height))
@@ -88,6 +90,8 @@ import UIKit
         graphPath.lineWidth = 2.0
         graphPath.stroke()
         
+        context?.restoreGState()
+        
         // add circles to end of points 
         
         for i in 0..<graphPoints.count {
@@ -98,6 +102,24 @@ import UIKit
             let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: 5.0, height: 5.0)))
             circle.fill()
         }
+        
+        // draw horizontal lines
+        var linePath = UIBezierPath()
+        
+        linePath.move(to: CGPoint(x: margin, y: topBorder))
+        linePath.addLine(to: CGPoint(x: width - margin, y: topBorder))
+        
+        linePath.move(to: CGPoint(x: margin, y: graphHeight / 2 + topBorder))
+        linePath.addLine(to: CGPoint(x: width - margin, y: graphHeight / 2 + topBorder))
+        
+        linePath.move(to: CGPoint(x: margin, y: height - bottomBorder))
+        linePath.addLine(to: CGPoint(x: width - margin, y: height - bottomBorder))
+        let color = UIColor(white: 1.0, alpha: 0.3)
+        color.setStroke()
+        
+        linePath.lineWidth = 1.0
+        linePath.stroke()
+        
         
     }
     

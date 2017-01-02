@@ -58,6 +58,35 @@ class CounterView: UIView {
         outlinePath.lineWidth = 5.0
         outlinePath.stroke()
         
+        let context = UIGraphicsGetCurrentContext()
+        
+        context?.saveGState()
+        outlineColor.setFill()
+        
+        let markerWidth: CGFloat = 5.0
+        let markerSize: CGFloat = 10.0
+        
+        //marker rectangle positioned at top left
+        var markerPath = UIBezierPath(rect: CGRect(x: -markerWidth/2, y: 0, width: markerWidth, height: markerSize))
+        
+        context?.translateBy(x: rect.width/2, y: rect.height/2)
+        
+        //gunna have to draw a few times
+        for i in 1...NoOfGlasses {
+            context?.saveGState()
+            
+            //calculate rotation angle
+            var angle = arcLengthPerGlass * CGFloat(i) + startAngle - π/2
+            
+            //rotate and translate
+            context?.rotate(by: angle)
+            context?.translateBy(x: 0, y: rect.height/2 - markerSize)
+            markerPath.fill()
+            
+            context?.restoreGState()
+        }
+        context?.restoreGState()
+        
         
 
         
